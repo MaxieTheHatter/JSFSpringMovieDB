@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml/"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Student Registration Form</title>
+
+	<style>
+.error {
+	color: red
+}
+</style>
+</h:head>
+<h:body>
+	<h1>Registration</h1>
+	<a href="#{request.contextPath}/login.xhtml">Already a member?
+		Login</a>
+	<form>
+		<br /> <br /> Username: <br />
+		<h:inputText value="#{userController.model.username}" label="Username"
+			required="true" />
+		<br /> <br /> Password: <br />
+		<h:inputSecret value="#{userController.model.pwd}" label="Password"
+			required="true" />
+		<br /> <br /> Confirm password: <br />
+		<h:inputSecret value="#{userController.model.pwdConfirm}"
+			label="Password confirmation" required="true" />
+		<br /> <br />
+		<h:commandButton value="Validate" action="#{userController.register}" />
+		<br /> <br />
+		<h:commandButton value="Reset" action="reset" />
+		<br /> <br />
+		<h:messages id="messages" />
+	</form>
+</h:body>
+</html>

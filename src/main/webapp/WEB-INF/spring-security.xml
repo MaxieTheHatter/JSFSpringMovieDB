@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/welcome.jsf" access="ROLE_ADMIN, ROLE_USER" />
+		<form-login login-page="/login.jsf" default-target-url="/welcome.jsf"
+			authentication-failure-url="/login.jsf?status=error" />
+		<logout logout-success-url="/login.jsf?status=logout" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="ds"
+				users-by-username-query="SELECT username, pwd, enabled FROM user WHERE username = ?"
+				authorities-by-username-query="SELECT u.username, r.code FROM user u, role r WHERE u.user_id = r.user_id AND u.username = ?" />
+		</authentication-provider>
+	</authentication-manager>
+
+	<beans:bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url"
+			value="jdbc:mysql://localhost/jsfmoviedb" />
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="" />
+	</beans:bean>
+</beans:beans>
