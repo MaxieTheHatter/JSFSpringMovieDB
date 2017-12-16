@@ -1,21 +1,10 @@
 package com.maxie.persistence;
 
-import javax.persistence.*;
-
-@Entity(name = "role")
 public class Role {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "role_id")
+
 	private int roleId;
-	
-	@Column(name = "code")
 	private String code;
-	
-	@Column(name = "label")
 	private String label;
-	
-	@Transient
 	private User user;
 
 	public int getRoleId() {

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <mapping class="com.maxie.persistence.User" />
-        <mapping class="com.maxie.persistence.Role" />
+        <mapping resource="com/maxie/persistence/User.hbm.xml" />
+        <mapping resource="com/maxie/persistence/Role.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

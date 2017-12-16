@@ -7,16 +7,16 @@ package com.maxie.model;
  */
 public class UserModel {
 	private String username;
-	private String pwd;
-	private String pwdConfirm;
+	private String password;
+	private String confirmPassword;
 
 	/**
 	 * Sets all variables to null when they're no longer needed
 	 */
 	public void reset() {
 		this.username = null;
-		this.pwd = null;
-		this.pwdConfirm = null;
+		this.password = null;
+		this.confirmPassword = null;
 	}
 
 	// Getters and setters
@@ -28,19 +28,20 @@ public class UserModel {
 		this.username = username;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getPwdConfirm() {
-		return pwdConfirm;
+	public String getConfirmPassword() {
+		return confirmPassword;
 	}
 
-	public void setPwdConfirm(String pwdConfirm) {
-		this.pwdConfirm = pwdConfirm;
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
+
 }

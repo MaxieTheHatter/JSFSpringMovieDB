@@ -3,25 +3,11 @@ package com.maxie.persistence;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
-
-@Entity(name = "user")
 public class User {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
 	private int userId;
-	
-	@Column(name = "username")
 	private String username;
-	
-	@Column(name = "pwd")
-	private String pwd;
-	
-	@Column(name = "enabled")
+	private String password;
 	private Integer enabled;
-	
-	@Transient
 	private Set<Role> roles = new HashSet<Role>(0);
 
 	public int getUserId() {
@@ -40,12 +26,12 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Integer isEnabled() {

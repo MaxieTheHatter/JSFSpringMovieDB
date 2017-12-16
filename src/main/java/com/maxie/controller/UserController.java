@@ -23,7 +23,7 @@ public class UserController {
 	 */
 	public String register() {
 		try {
-			if (!model.getPwd().equals(model.getPwdConfirm())) {
+			if (!model.getPassword().equals(model.getConfirmPassword())) {
 				throw new Exception("Both passwords must match");
 			}
 			userManager.addUser(model);
