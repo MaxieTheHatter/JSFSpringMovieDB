@@ -35,7 +35,7 @@ public class UserDAO {
 		user.setPwd(model.getPwd());
 		// active the user account
 		user.setEnabled(1);
-		Role role = (Role) sessionFactory.getCurrentSession().createQuery("FROM role WHERE code='ROLE_USER'")
+		Role role = (Role) sessionFactory.getCurrentSession().createQuery("FROM role WHERE code='ROLE_TEST'")
 				.uniqueResult();
 		if(role == null) {
 			role = new Role();
