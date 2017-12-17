@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml/"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<title>Add movie to database</title>
+
+	<style>
+.error {
+	color: red
+}
+</style>
+</h:head>
+<h:body>
+	<h:form>
+
+		<h1>Add a new movie to the database</h1>
+		<a href="#{request.contextPath}/welcome.xhtml">Go back to main
+			page</a>
+		<br />
+		<br />
+		*<b>required</b>
+		<br />
+		Title: <br />
+		<h:inputText value="#{movieController.model.title}"
+			label="Title of movie" required="true" /> *
+		<br />
+		<br />
+		Genre: <br />
+		<h:selectOneMenu value="#{movieController.model.genre}">
+			<f:selectItems value="#{movieController.model.genreOptions}" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+		Description: (optional) <br />
+		<h:inputTextarea value="#{movieController.model.description}"
+			label="Description" p:placeholder="Enter movie description" cols="50"
+			rows="10" />
+		<br />
+		<br />
+		rating: <br />
+		<h:selectOneMenu value="#{movieController.model.rating}">
+			<f:selectItems value="#{movieController.model.ratingOptions}" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+		<h:commandButton value="Submit" action="#{movieController.register}" />
+		<br />
+		<br />
+		<h:commandButton value="Reset" type="reset" />
+		<br />
+		<br />
+		<h:message id="messages" />
+
+	</h:form>
+</h:body>
+</html>

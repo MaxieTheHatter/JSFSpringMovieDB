@@ -19,6 +19,7 @@ public class UserController {
 
 	/**
 	 * Tries to register a new account, throws an error if the passwords don't match
+	 * 
 	 * @return redirects the user to the login page
 	 */
 	public String register() {
@@ -32,8 +33,6 @@ public class UserController {
 					"Registration failed, reason: " + e.getMessage(), ""));
 			return null;
 		}
-		FacesContext.getCurrentInstance().addMessage(null,
-				new FacesMessage(FacesMessage.SEVERITY_INFO, "Registration was successful", ""));
 		// reset user variables
 		model.reset();
 		return "login";

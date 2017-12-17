@@ -1,15 +1,50 @@
 package com.maxie.persistence;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Movie {
 	private int movieId;
 	private String title;
+	private Genre genre;
+	private int rating;
 	private String description;
-	private Integer enabled;
-	private Set<WatchList> watchlists = new HashSet<WatchList>(0);
-	private Set<Director> directors = new HashSet<Director>(0);
-	private Set<LeadActor> leadActors = new HashSet<LeadActor>(0);
+
+	public int getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 }

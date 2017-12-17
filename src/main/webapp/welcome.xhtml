@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
 <body>
 	<h1>Welcome!</h1>
+	Logged in as #{request.remoteUser}. <br />
+	<br />
+	<a href="#{request.contextPath}/register.xhtml">Browse all movies</a><br />
+	<a href="#{request.contextPath}/register.xhtml">Search movies</a><br />
+	<a href="#{request.contextPath}/new_movie.xhtml">Add new movie</a><br />
+	<a href="#{request.contextPath}/register.xhtml">Manage your account</a><br /><br />
+	<h:outputText value="User #{request.remoteUser} has admin rights"
+		rendered="#{request.isUserInRole('ROLE_ADMIN')}" styleClass="preformatted" />
 	<br />
 	<a href="j_spring_security_logout"> Logout </a>
 </body>

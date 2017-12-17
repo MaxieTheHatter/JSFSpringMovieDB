@@ -1,10 +1,13 @@
 package com.maxie.model;
 
+import javax.faces.bean.ManagedBean;
+
 /**
  * Class used in registration of an account, takes a username and stores temporary variables for passwords
  * @author Maxie
  *
  */
+@ManagedBean
 public class UserModel {
 	private String username;
 	private String password;
