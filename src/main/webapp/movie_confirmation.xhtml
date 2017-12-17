@@ -16,19 +16,14 @@
 <h1>New movie added to database:</h1><br />
 
 
-Movie title: #{movie.title}<br />
-Genre: #{movie.genre}<br />
-	<h:outputText value="Description: #{movie.description}"
+Movie title: #{movieController.model.title}<br />
+Genre: #{movieController.model.genre}<br />
+	<h:outputText value="Description: #{movieController.model.description}"
 		rendered="#{movie.description != ''}" styleClass="preformatted" />
 		
-	<h:outputText value="Director: #{movie.director}"
-		rendered="#{movie.director != ''}" styleClass="preformatted" />
-
-	<h:outputText value="lead actor: #{movie.mainActor}"
-		rendered="#{movie.mainActor != ''}" styleClass="preformatted" />
-Rating: #{movie.rating}
+Rating: #{movieController.model.rating}
 <br />
-	<h:commandButton action="new_movie" value="Okay" />
+	<a href="#{request.contextPath}/welcome.xhtml">Got it!</a>
 
 
 </h:body>

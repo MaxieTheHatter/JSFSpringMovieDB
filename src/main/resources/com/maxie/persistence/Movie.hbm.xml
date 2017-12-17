@@ -15,7 +15,7 @@
 		<property name="rating">
 			<column name="RATING"></column>
 		</property>
-		<property name="description" type="text">
+		<property name="description" type="string">
 			<column name="DESCRIPTION">
 				<comment>Movie description</comment>
 			</column>

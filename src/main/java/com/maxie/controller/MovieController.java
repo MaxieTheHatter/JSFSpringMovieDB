@@ -25,7 +25,6 @@ public class MovieController {
 					"Registration failed, reason: " + e.getMessage(), ""));
 			return null;
 		}
-		model.reset();
 		return "movie_confirmation";
 	}
 

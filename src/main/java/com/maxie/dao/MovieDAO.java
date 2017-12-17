@@ -29,8 +29,9 @@ public class MovieDAO {
 		System.out.println("Movie rating: " + movie.getRating());
 		movie.setTitle(model.getTitle());
 		movie.setRating(model.getRating());
+		movie.setDescription(model.getDescription());
 		Genre genre = (Genre) sessionFactory.getCurrentSession()
-				.createQuery("FROM genre WHERE genre ='" + model.getGenre() + "'").uniqueResult();
+				.createQuery("FROM Genre WHERE genre ='" + model.getGenre() + "'").uniqueResult();
 
 		movie.setGenre(genre);
 		sessionFactory.getCurrentSession().save(movie);
