@@ -6,6 +6,12 @@ import javax.inject.Named;
 import com.maxie.dao.MovieDAO;
 import com.maxie.model.MovieModel;
 
+/**
+ * CDI Bean for movie objects
+ * 
+ * @author Maxie
+ *
+ */
 @Named
 public class MovieManager {
 

@@ -3,7 +3,8 @@ package com.maxie.model;
 import javax.faces.bean.ManagedBean;
 
 /**
- * Class used in registration of an account, takes a username and stores temporary variables for passwords
+ * ManagedBean for User objects
+ * 
  * @author Maxie
  *
  */
@@ -14,7 +15,7 @@ public class UserModel {
 	private String confirmPassword;
 
 	/**
-	 * Sets all variables to null when they're no longer needed
+	 * resets the user bean by setting variables to null
 	 */
 	public void reset() {
 		this.username = null;

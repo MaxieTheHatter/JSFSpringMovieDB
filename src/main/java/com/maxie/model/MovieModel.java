@@ -5,19 +5,25 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
+/**
+ * ManagedBean for Movie objects
+ * 
+ * @author Maxie
+ *
+ */
 @ManagedBean
 public class MovieModel {
 	private String title;
 	private String genre;
 	private String description;
 	private int rating;
-	
+
 	// create option-dropdowns
 	private List<String> genreOptions;
 	private List<Integer> ratingOptions;
-	
+
 	// no arg constructor
-	public MovieModel(){
+	public MovieModel() {
 		// populate genre dropdown with options
 		genreOptions = new ArrayList<>();
 		genreOptions.add("Action");
@@ -26,18 +32,22 @@ public class MovieModel {
 		genreOptions.add("Drama");
 		genreOptions.add("Horror");
 		genreOptions.add("Thriller");
-		
+
 		// populate ratings dropdown
 		ratingOptions = new ArrayList<>();
-		for(int i = 1; i <= 10; i++){
+		for (int i = 1; i <= 10; i++) {
 			ratingOptions.add(i);
 		}
 	}
-	
+
+	/**
+	 * Resets Movie variables by setting String to null and ints to 0
+	 */
 	public void reset() {
 		this.title = null;
 		this.genre = null;
 		this.description = null;
+		this.rating = 0;
 	}
 
 	// getters and setters

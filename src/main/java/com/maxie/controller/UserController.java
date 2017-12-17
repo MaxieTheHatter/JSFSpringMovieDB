@@ -9,10 +9,17 @@ import javax.inject.Named;
 import com.maxie.manager.UserManager;
 import com.maxie.model.UserModel;
 
+/**
+ * Controls the User ManagedBean
+ * 
+ * @author Maxie
+ *
+ */
 @ManagedBean
 @Named
 public class UserController {
 
+	// Inject UserManager bean
 	@Inject
 	public UserManager userManager;
 	private UserModel model = new UserModel();

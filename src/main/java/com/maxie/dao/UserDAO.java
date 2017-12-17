@@ -13,6 +13,13 @@ import com.maxie.model.UserModel;
 import com.maxie.persistence.Role;
 import com.maxie.persistence.User;
 
+/**
+ * Data Access Object that handles database transaction for user objects.
+ * Contains methods applying the CRUD standard
+ * 
+ * @author Maxie
+ *
+ */
 @Named
 @Transactional("transactionManager")
 public class UserDAO {
@@ -27,15 +34,14 @@ public class UserDAO {
 
 	/**
 	 * After user inputs are confirmed, receive created user and add to database,
-	 * set's privileges to member by default
+	 * set's privileges to member by default. If user_role doesn't exist, add it to
+	 * database.
 	 * 
 	 * @param model
-	 *            user to be added
+	 *            user model retrieved from controller class
 	 */
 	public void addUser(UserModel model) {
 		User user = new User();
-		System.out.println("Username : " + model.getUsername());
-		System.out.println("Password : " + model.getPassword());
 		user.setUsername(model.getUsername());
 		user.setPassword(model.getPassword());
 		// active the user account
@@ -51,15 +57,15 @@ public class UserDAO {
 		user.setRole(role);
 		sessionFactory.getCurrentSession().save(user);
 	}
-	
+
 	public void updateUser(String user) {
-		
+
 	}
-	
+
 	public void deleteUser(String user) {
-		
+
 	}
-	
+
 	public List readUsers() {
 		List users = null;
 		try {
@@ -77,7 +83,7 @@ public class UserDAO {
 				sessionFactory.getCurrentSession().getTransaction().rollback();
 			e.printStackTrace();
 		} finally {
-			
+
 		}
 		return users;
 	}

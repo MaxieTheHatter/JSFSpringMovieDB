@@ -1,0 +1,5 @@
+com.maxie.controller
+com.maxie.dao
+com.maxie.manager
+com.maxie.model
+com.maxie.persistence

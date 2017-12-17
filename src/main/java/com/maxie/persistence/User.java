@@ -1,10 +1,25 @@
 package com.maxie.persistence;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+/**
+ * User POJO for database mapping by hibernate
+ * 
+ * @author Maxie
+ *
+ */
+@Entity
 public class User {
+	@Id
+	@GeneratedValue
 	private int userId;
 	private String username;
 	private String password;
 	private Integer enabled;
+	@ManyToOne
 	private Role role;
 
 	public int getUserId() {

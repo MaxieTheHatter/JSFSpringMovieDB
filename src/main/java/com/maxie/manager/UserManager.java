@@ -6,6 +6,11 @@ import javax.inject.Named;
 import com.maxie.dao.UserDAO;
 import com.maxie.model.UserModel;
 
+/**
+ * CDI Bean for User objects
+ * @author Maxie
+ *
+ */
 @Named
 public class UserManager {
 

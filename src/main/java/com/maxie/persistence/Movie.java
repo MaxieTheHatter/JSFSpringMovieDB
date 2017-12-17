@@ -1,8 +1,23 @@
 package com.maxie.persistence;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+/**
+ * Movie POJO, used in database mapping by hibernate
+ * 
+ * @author Maxie
+ *
+ */
+@Entity
 public class Movie {
+	@Id
+	@GeneratedValue
 	private int movieId;
 	private String title;
+	@ManyToOne
 	private Genre genre;
 	private int rating;
 	private String description;
