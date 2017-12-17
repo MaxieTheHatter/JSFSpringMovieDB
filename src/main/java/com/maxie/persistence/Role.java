@@ -1,11 +1,13 @@
 package com.maxie.persistence;
 
+import java.util.Set;
+
 public class Role {
 
 	private int roleId;
 	private String code;
 	private String label;
-	private User user;
+	private Set<User> users;
 
 	public int getRoleId() {
 		return roleId;
@@ -31,11 +33,12 @@ public class Role {
 		this.label = label;
 	}
 
-	public User getUser() {
-		return user;
+	public Set<User> getUsers() {
+		return users;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
+	
 }

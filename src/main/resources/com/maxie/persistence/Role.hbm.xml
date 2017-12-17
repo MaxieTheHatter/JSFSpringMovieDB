@@ -17,11 +17,11 @@
 				<comment>role title/label</comment>
 			</column>
 		</property>
-		<many-to-one name="user" class="com.maxie.persistence.User"
-			fetch="select">
-			<column name="USER_ID" not-null="true">
-				<comment></comment>
-			</column>
-		</many-to-one>
+		<set name="users" table="user" fetch="select">
+			<key>
+				<column name="role_id" not-null="true"></column>
+			</key>
+			<one-to-many class="com.maxie.persistence.User" />
+		</set>
 	</class>
 </hibernate-mapping>

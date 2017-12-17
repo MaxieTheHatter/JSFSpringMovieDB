@@ -17,7 +17,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="ds"
 				users-by-username-query="SELECT username, password, enabled FROM user WHERE username = ?"
-				authorities-by-username-query="SELECT u.username, r.code FROM user u, role r WHERE u.user_id = r.user_id AND u.username = ?" />
+				authorities-by-username-query="SELECT u.username, r.code FROM user u, role r WHERE u.role_id = r.role_id AND u.username = ?" />
 		</authentication-provider>
 	</authentication-manager>
 

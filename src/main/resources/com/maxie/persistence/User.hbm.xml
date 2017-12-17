@@ -22,13 +22,8 @@
                 <comment>Account status, 1(true) or 0(false)</comment>
             </column>
         </property>
-        <set name="roles">
-			<key>
-				<column name="USER_ID" not-null="true">
-					<comment></comment>
-				</column>
-			</key>
-			<one-to-many class="com.maxie.persistence.Role" />
-		</set>
+        <many-to-one name="role" class="com.maxie.persistence.Role">
+        	<column name="role_id" not-null="true"></column>
+        </many-to-one>
     </class>
 </hibernate-mapping>

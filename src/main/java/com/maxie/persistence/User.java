@@ -8,7 +8,7 @@ public class User {
 	private String username;
 	private String password;
 	private Integer enabled;
-	private Set<Role> roles = new HashSet<Role>(0);
+	private Role role;
 
 	public int getUserId() {
 		return userId;
@@ -42,11 +42,12 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	public Set<Role> getRoles() {
-		return roles;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
 	}
+
 }
