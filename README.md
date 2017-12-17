@@ -32,6 +32,8 @@ Here's what you neeed to get started.
 
 Maven [Setup Guide for eclipse](http://www.vogella.com/tutorials/EclipseMaven/article.html)
 
+JSF 2.2 - Included with Eclipse Oxygen EE
+
 Eclipse Oxygen EE (or IDE of your choice) [Download Link](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-win64.exe)
 
 Hibernate [Download Link](http://tools.jboss.org/downloads/jbosstools/oxygen/4.5.1.Final.html) - Can be installed through eclipse marketplace using jbosstools
