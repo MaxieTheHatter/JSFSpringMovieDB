@@ -113,11 +113,6 @@ ALTER TABLE `user`
 ```
 Or simply import the included SQL file using phpmyadmin or SQL workbench (found in the documentation folder)
 
-## General info
-
-Please check the javadocs if any of the methods are unclear, if it's still confusing post an issue to this page.
-[Link to javadocs](https://maxiethehatter.github.io/DnDCharacterDB/)
-
 ## Authors
 
 MaxieTheHatter - yours truly
