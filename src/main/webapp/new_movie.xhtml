@@ -17,10 +17,18 @@
 	<h:form>
 
 		<h1>Add a new movie to the database</h1>
-		<a href="#{request.contextPath}/welcome.xhtml">Go back to main
-			page</a>
+		Logged in as #{request.remoteUser}.
+	<br />
+		<h:outputText value="User privilages -  Admin"
+			rendered="#{request.isUserInRole('ROLE_ADMIN')}" />
+		<h:outputText value="User privilages - User"
+			rendered="#{request.isUserInRole('ROLE_USER')}" />
+		<br />
+		<a href="j_spring_security_logout"> Logout </a>
 		<br />
 		<br />
+		<br />
+		
 		*<b>required</b>
 		<br />
 		Title: <br />
@@ -46,13 +54,15 @@
 		</h:selectOneMenu>
 		<br />
 		<br />
-		<h:commandButton value="Submit" action="#{movieController.register}" />
+		<h:commandButton value="Submit" action="#{movieController.addMovie}" />
 		<br />
 		<br />
 		<h:commandButton value="Reset" type="reset" />
 		<br />
 		<br />
 		<h:message id="messages" />
+		<a href="#{request.contextPath}/welcome.xhtml">Go back to main
+			page</a>
 
 	</h:form>
 </h:body>

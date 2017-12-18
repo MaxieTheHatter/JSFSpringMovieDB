@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,35 +58,9 @@ public class UserDAO {
 		user.setRole(role);
 		sessionFactory.getCurrentSession().save(user);
 	}
-
-	public void updateUser(String user) {
-
-	}
-
-	public void deleteUser(String user) {
-
-	}
-
-	public List readUsers() {
-		List users = null;
-		try {
-			users = sessionFactory.getCurrentSession().createQuery("FROM user").list();
-			if (users.isEmpty()) {
-				users.add("No registered users in DB, check if correctly setup");
-				return users;
-			}
-			for (Iterator iterator = users.iterator(); iterator.hasNext();) {
-				User user = (User) iterator.next();
-			}
-			return users;
-		} catch (HibernateException e) {
-			if (sessionFactory.getCurrentSession().getTransaction() != null)
-				sessionFactory.getCurrentSession().getTransaction().rollback();
-			e.printStackTrace();
-		} finally {
-
-		}
-		return users;
+	
+	public List getUsers() {
+		return sessionFactory.openSession().createQuery("SELECT e.username, e.role_id FROM User").list();
 	}
 
 }

@@ -1,11 +1,14 @@
 package com.maxie.controller;
 
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.maxie.dao.MovieDAO;
 import com.maxie.manager.MovieManager;
 import com.maxie.model.MovieModel;
 
@@ -29,7 +32,7 @@ public class MovieController {
 	 * 
 	 * @return redirects the user to confirmation page
 	 */
-	public String register() {
+	public String addMovie() {
 		try {
 			movieManager.addMovie(model);
 		} catch (Exception e) {
@@ -38,6 +41,19 @@ public class MovieController {
 			return null;
 		}
 		return "movie_confirmation";
+	}
+
+	/**
+	 * Tells the movie manager to execute the getMovies path, movieManager tells
+	 * movieDAO to get the list which is then returned to the controller
+	 * 
+	 * @return List containing all movie object from the DB table movie
+	 * 
+	 * @see MovieManager#getMovies()
+	 * @see MovieDAO#getMovies()
+	 */
+	public List getMovies() {
+		return movieManager.getMovies();
 	}
 
 	// getters and setters

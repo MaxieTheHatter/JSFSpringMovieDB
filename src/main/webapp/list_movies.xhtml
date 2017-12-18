@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+	<h1>List of movies in database</h1>
+	Logged in as #{request.remoteUser}.
+	<br />
+	<h:outputText value="User privilages -  Admin"
+		rendered="#{request.isUserInRole('ROLE_ADMIN')}" />
+	<h:outputText value="User privilages - User"
+		rendered="#{request.isUserInRole('ROLE_USER')}" />
+	<br />
+	<a href="j_spring_security_logout"> Logout </a>
+	<br />
+	<br />
+	<br />
+
+	<h:dataTable value="#{movieController.movies}" var="m" border="1">
+		<h:column rendered="#{request.isUserInRole('ROLE_ADMIN')}">
+			<f:facet name="header">ID</f:facet>
+			#{m.movieId}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Title</f:facet>
+			#{m.title}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Genre</f:facet>
+			#{m.genre}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Description</f:facet>
+			#{m.description}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Rating</f:facet>
+			#{m.rating}
+		</h:column>
+	</h:dataTable>
+	<a href="#{request.contextPath}/welcome.xhtml">Back to home page</a>
+</h:body>
+</html>

@@ -2,18 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html">
 <body>
 	<h1>Welcome!</h1>
-	Logged in as #{request.remoteUser}. <br />
+	Logged in as #{request.remoteUser}.
 	<br />
-	<a href="#{request.contextPath}/register.xhtml">Browse all movies</a><br />
-	<a href="#{request.contextPath}/register.xhtml">Search movies</a><br />
-	<a href="#{request.contextPath}/new_movie.xhtml">Add new movie</a><br />
-	<a href="#{request.contextPath}/register.xhtml">Manage your account</a><br /><br />
-	<h:outputText value="User #{request.remoteUser} has admin rights"
-		rendered="#{request.isUserInRole('ROLE_ADMIN')}" styleClass="preformatted" />
+	<h:outputText value="User privilages -  Admin"
+		rendered="#{request.isUserInRole('ROLE_ADMIN')}" />
+	<h:outputText value="User privilages - User"
+		rendered="#{request.isUserInRole('ROLE_USER')}" />
 	<br />
 	<a href="j_spring_security_logout"> Logout </a>
+	<br /><br /><br />
+	<a href="#{request.contextPath}/list_movies.xhtml">Browse all
+		movies</a>
+	<br />
+	<a href="#{request.contextPath}/new_movie.xhtml">Add new movie</a>
 </body>
 </html>

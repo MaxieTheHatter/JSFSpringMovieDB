@@ -1,5 +1,7 @@
 package com.maxie.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -50,5 +52,14 @@ public class MovieDAO {
 		}
 		movie.setGenre(genre);
 		sessionFactory.getCurrentSession().save(movie);
+	}
+
+	/**
+	 * Executes a HQL query that returns all columns from the movie table
+	 * 
+	 * @return a list containing all movie entries
+	 */
+	public List getMovies() {
+		return sessionFactory.openSession().createQuery("FROM Movie").list();
 	}
 }

@@ -22,6 +22,10 @@ public class MovieModel {
 	private List<String> genreOptions;
 	private List<Integer> ratingOptions;
 
+	/**
+	 * no args constructor that populates the genre and rating arrays, used in the
+	 * jsf form when adding a new movie
+	 */
 	// no arg constructor
 	public MovieModel() {
 		// populate genre dropdown with options

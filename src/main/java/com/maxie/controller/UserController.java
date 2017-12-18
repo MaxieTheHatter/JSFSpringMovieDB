@@ -1,11 +1,14 @@
 package com.maxie.controller;
 
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.maxie.dao.UserDAO;
 import com.maxie.manager.UserManager;
 import com.maxie.model.UserModel;
 
@@ -29,7 +32,7 @@ public class UserController {
 	 * 
 	 * @return redirects the user to the login page
 	 */
-	public String register() {
+	public String addUser() {
 		try {
 			if (!model.getPassword().equals(model.getConfirmPassword())) {
 				throw new Exception("Both passwords must match");
@@ -43,6 +46,18 @@ public class UserController {
 		// reset user variables
 		model.reset();
 		return "login";
+	}
+
+	/**
+	 * Executes the getUsers method in the usermanager, which in turn does the same
+	 * for the dao which accesses the database
+	 * 
+	 * @return List containing all the users in the database
+	 * @see UserManager#getUsers()
+	 * @see UserDAO#getUsers()
+	 */
+	public List getUsers() {
+		return userManager.getUsers();
 	}
 
 	// getters and setters
