@@ -45,5 +45,9 @@ public class Genre {
 	public void setMovies(Set<Movie> movies) {
 		this.movies = movies;
 	}
+	
+	public String toString() {
+		return genre;
+	}
 
 }
